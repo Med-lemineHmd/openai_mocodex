@@ -18,8 +18,8 @@ function loader(element) {
   }, 300);
 }
 
-function typeText(element, index) {
-  let inde = 0;
+function typeText(element, text) {
+  let index = 0;
 
   let interval = setInterval(() => {
     if (index < text.length) {
@@ -29,4 +29,12 @@ function typeText(element, index) {
       clearInterval(interval);
     }
   }, 20);
+}
+
+function generateUniqueId() {
+  const timestamp = Date.now();
+  const randomNumber = Math.random();
+  const hexadecimalString = randomNumber.toString(16);
+
+  return `id-${timestamp}-${hexadecimalString}`;
 }
